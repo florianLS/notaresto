@@ -16,6 +16,10 @@ body {
   align-items: center;
   flex-wrap: wrap;
 }
+.home .restaurants h3 {
+  width: 100%;
+  text-align: center;
+}
 .home .restaurants .one-restaurant {
   margin: 30px;
   padding: 15px;

@@ -6,6 +6,17 @@
     <div class="container home">    
         <h1>Bienvenue sur le meilleur site d'avis des restaurants français !</h1>
         <div class="restaurants">
+            <h3>Les 10 Restaurants les plus récents du site</h3>
+            {# {% for restaurant in youngerRestaurants %} #}
+                {# <div class="one-restaurant">
+                    <h2>{{restaurant.name}}</h2>
+                    <p>{{restaurant.description}}</p>
+                </div>
+            {% endfor %} #}
+        </div>
+        <hr>
+        <div class="restaurants">
+            <h3>Tous les restaurants</h3>
             {% for restaurant in restaurants %}
                 <div class="one-restaurant">
                     <h2>{{restaurant.name}}</h2>
