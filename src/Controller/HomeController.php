@@ -15,9 +15,13 @@ class HomeController extends AbstractController
     {
 
         $restaurants = $em->getRepository(Restaurant::class)->findAll();
+        $youngestRestaurants = $em->getRepository(Restaurant::class)->findTenLastRegisterRestaurants();
+        $topTenBestRatingRestaurants = $em->getRepository(Restaurant::class)->findTenBestRatingRestaurants();
 
         return $this->render('home/index.html.twig', [
-            'restaurants' => $restaurants
+            'restaurants' => $restaurants,
+            'youngestRestaurants' => $youngestRestaurants,
+            'topTen' => $topTenBestRatingRestaurants
         ]);
     }
 }

@@ -4,6 +4,7 @@
 
 body {
     background-color: rgb(231, 225, 225);
+    font-family: sans-serif;
 }
 
 .home {
@@ -22,6 +23,13 @@ body {
             margin: 30px;
             padding: 15px;
             background-color: rgb(201, 151, 151);
+            h2 {
+                text-align: center;
+            }
+            .no-note {
+                font-style: italic;
+                color: rgb(187, 88, 88);
+            }
         }
     }
 }
