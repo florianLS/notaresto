@@ -1,7 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}NotaResto - Accueil{% endblock %}
 
 {% block body %}
-<p>Home</p>
+    <div class="container home">    
+        <h1>Bienvenue sur le meilleur site d'avis des restaurants français !</h1>
+        <div class="restaurants">
+            {% for restaurant in restaurants %}
+                <div class="one-restaurant">
+                    <h2>{{restaurant.name}}</h2>
+                    <p>{{restaurant.description}}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
