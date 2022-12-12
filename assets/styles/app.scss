@@ -9,8 +9,11 @@ body {
 
 header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
+    #main-logo {
+        margin-left: 20px;
+    }
     #nav-menu {
         display: flex;
         justify-content: center;
@@ -34,6 +37,11 @@ header {
     }
 }
 
+main > .container {
+    width: 90%;
+    margin: 0 auto;
+}
+
 .home {
     width: 90%;
     margin: 0 auto;
@@ -50,6 +58,10 @@ header {
             margin: 30px;
             padding: 15px;
             background-color: rgb(201, 151, 151);
+            a {
+                text-decoration: none;
+                color: rgb(235, 213, 213);
+            }
             h2 {
                 text-align: center;
             }
@@ -58,5 +70,55 @@ header {
                 color: rgb(187, 88, 88);
             }
         }
+    }
+}
+
+.restaurants {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .one-restaurant {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        border: 1px solid grey;
+        padding: 20px;
+    }
+}
+
+.add-restaurant {
+    text-align: center;
+    form #restaurant > div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        input, textarea {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        #restaurant_submit {
+            margin-top: 20px;
+        }
+    }
+}
+
+.success {
+    background-color: rgb(98, 209, 98);
+    color: #fff;
+    font-weight: bold;
+}
+
+.the-restaurant {
+    #poster {
+        width: 50%;
+        object-fit: cover;
+    }
+    .review {
+        border: 1px solid black;
+        padding: 20px;
     }
 }

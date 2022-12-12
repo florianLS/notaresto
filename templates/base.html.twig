@@ -8,11 +8,16 @@
     </head>
     <body>
         <header>
+            <div id="main-logo">
+                <a href="{{path('home')}}">
+                    <img src="{{asset('assets/img/restaurant.png')}}" alt="Logo principal du site - Maison restaurant">
+                </a>
+            </div>
             <nav id="nav-menu">
                 <a href="">Mes restaurants</a>
-                <a href="">Ajouter un restaurant</a>
-                <a href="">Tous les restaurants</a>
-                <a href="">Tous les utilisateurs</a>
+                <a href="{{ path('add_restaurant') }}">Ajouter un restaurant</a>
+                <a href="{{ path('restaurants') }}">Tous les restaurants</a>
+                <a href="{{path('user_view')}}">Tous les utilisateurs</a>
                 <div class="postal-code">
                     <input type="text" placeholder="Chercher un code postal...">
                 </div>

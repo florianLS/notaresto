@@ -10,9 +10,11 @@
             <h3>Les 10 Restaurants les mieux notés</h3>
             {% for restaurant in topTen %}
                 <div class="one-restaurant">
-                    <h2>{{restaurant.name}}</h2>
-                    <p>{{restaurant.description}}</p>
-                    <p>Note: {{restaurant.rating}}/5</p>
+                    <a href="{{path('restaurant', {'id': restaurant.id})}}">
+                        <h2>{{restaurant.name}}</h2>
+                        <p>{{restaurant.description}}</p>
+                        <p>Note: {{restaurant.rating}}/5</p>
+                    </a>
                 </div>
             {% endfor %}
         </div>
@@ -21,13 +23,15 @@
             <h3>Les 10 Restaurants les plus récents du site</h3>
             {% for restaurant in youngestRestaurants %}
                 <div class="one-restaurant">
-                    <h2>{{restaurant.name}}</h2>
-                    <p>{{restaurant.description}}</p>
-                    {% if restaurant.getAverageRating matches '/^[-+]?[0-9]*\\.?[0-9]+$/' %}
-                        <p>Note: {{restaurant.getAverageRating}}/5</p>
-                    {% else %}
-                        <p class="no-note">{{restaurant.getAverageRating}}</p>
-                    {% endif %}
+                    <a href="{{path('restaurant', {'id': restaurant.id})}}">
+                        <h2>{{restaurant.name}}</h2>
+                        <p>{{restaurant.description}}</p>
+                        {% if restaurant.getAverageRating matches '/^[-+]?[0-9]*\\.?[0-9]+$/' %}
+                            <p>Note: {{restaurant.getAverageRating}}/5</p>
+                        {% else %}
+                            <p class="no-note">{{restaurant.getAverageRating}}</p>
+                        {% endif %}
+                    </a>
                 </div>
             {% endfor %}
         </div>
@@ -36,13 +40,15 @@
             <h3>Tous les restaurants</h3>
             {% for restaurant in restaurants %}
                 <div class="one-restaurant">
-                    <h2>{{restaurant.name}}</h2>
-                    <p>{{restaurant.description}}</p>
-                    {% if restaurant.getAverageRating matches '/^[-+]?[0-9]*\\.?[0-9]+$/' %}
-                        <p>Note: {{restaurant.getAverageRating}}/5</p>
-                    {% else %}
-                        <p class="no-note">{{restaurant.getAverageRating}}</p>
-                    {% endif %}
+                    <a href="{{path('restaurant', {'id': restaurant.id})}}">
+                        <h2>{{restaurant.name}}</h2>
+                        <p>{{restaurant.description}}</p>
+                        {% if restaurant.getAverageRating matches '/^[-+]?[0-9]*\\.?[0-9]+$/' %}
+                            <p>Note: {{restaurant.getAverageRating}}/5</p>
+                        {% else %}
+                            <p class="no-note">{{restaurant.getAverageRating}}</p>
+                        {% endif %}
+                    </a>
                 </div>
             {% endfor %}
         </div>
