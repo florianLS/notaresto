@@ -28,6 +28,13 @@ header #nav-menu input {
   padding: 5 10px;
   width: 200px;
 }
+header #nav-menu #search-restaurants {
+  width: 100px;
+  background-color: rgb(124, 212, 124);
+  border: none;
+  padding: 2px 8px;
+  cursor: pointer;
+}
 header #user-identification {
   display: flex;
   justify-content: flex-end;
@@ -120,4 +127,9 @@ main > .container {
 .the-restaurant .review {
   border: 1px solid black;
   padding: 20px;
+}
+
+.search-restaurants {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=app.css.map */

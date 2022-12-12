@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Restaurants CP: {{zipcode}}{% endblock %}
+
+{% block body %}
+    <div class="container search-restaurants">
+        <h2>Tous nos restaurants appartenant au code postal : {{zipcode}}</h2>
+
+        {% for restaurant in restaurants %}
+            <div class="one-restaurant">
+                <h2>{{restaurant.name}}</h2>
+                <p>{{restaurant.description}}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
