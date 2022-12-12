@@ -7,6 +7,26 @@
         {{ encore_entry_link_tags('css') }}
     </head>
     <body>
+        <header>
+            <nav id="nav-menu">
+                <a href="">Mes restaurants</a>
+                <a href="">Ajouter un restaurant</a>
+                <a href="">Tous les restaurants</a>
+                <a href="">Tous les utilisateurs</a>
+                <div class="postal-code">
+                    <input type="text" placeholder="Chercher un code postal...">
+                </div>
+            </nav>
+            <nav id="user-identification">
+                {% if app.user %}
+                    <p>Bienvenue  {{ app.user.email }} !</p>
+                    <a href="{{ path('logout') }}">Déconnexion</a>
+                {% else %}
+                    <a href="{{ path('register') }}">S'inscrire</a>
+                    <a href="{{ path('login') }}">Se connecter</a>
+                {% endif %}
+            </nav>
+        </header>
         <main>
             {% block body %}{% endblock %}
         </main>

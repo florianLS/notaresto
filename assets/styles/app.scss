@@ -7,6 +7,33 @@ body {
     font-family: sans-serif;
 }
 
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    #nav-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 40px;
+        a {
+            margin: 0 15px;
+        }
+        input {
+            padding: 5 10px;
+            width: 200px;
+        }
+    }
+    #user-identification {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        a {
+            margin: 0 20px;
+        }
+    }
+}
+
 .home {
     width: 90%;
     margin: 0 auto;
