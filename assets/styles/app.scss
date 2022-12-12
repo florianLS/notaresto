@@ -26,6 +26,13 @@ header {
             padding: 5 10px;
             width: 200px;
         }
+        #search-restaurants {
+            width: 100px;
+            background-color: rgb(124, 212, 124);
+            border: none;
+            padding: 2px 8px;
+            cursor: pointer;
+        }
     }
     #user-identification {
         display: flex;
@@ -121,4 +128,9 @@ main > .container {
         border: 1px solid black;
         padding: 20px;
     }
+}
+
+.search-restaurants {
+    display: flex;
+    flex-direction: column;
 }

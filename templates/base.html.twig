@@ -19,7 +19,10 @@
                 <a href="{{ path('restaurants') }}">Tous les restaurants</a>
                 <a href="{{path('user_view')}}">Tous les utilisateurs</a>
                 <div class="postal-code">
-                    <input type="text" placeholder="Chercher un code postal...">
+                    <form action="{{path('search_restaurants')}}">
+                        <input type="text" placeholder="Chercher un code postal..." name="zipcode">
+                        <input type="submit" value="Rechercher" id="search-restaurants">
+                    </form>
                 </div>
             </nav>
             <nav id="user-identification">

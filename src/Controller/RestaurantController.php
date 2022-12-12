@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\City;
 use App\Entity\User;
 use DateTimeImmutable;
 use App\Entity\Restaurant;
@@ -79,5 +80,22 @@ class RestaurantController extends AbstractController
             'form' => $form->createView(),
             'notification' => $notification
         ]);
+    }
+
+    #[Route('/restaurant/search', name: 'search_restaurants', priority: 10)]
+    public function search(EntityManagerInterface $em, Request $request): Response
+    {
+        $zipcode = $request->get("zipcode");
+        if ($zipcode) {
+            $resultCity = $em->getRepository(City::class)->findOneByZipcode($zipcode);
+            $result = $resultCity->getRestaurants();
+
+            return $this->render('restaurant/zipcode.html.twig', [
+                'restaurants' => $result,
+                'zipcode' => $zipcode
+            ]);
+        } else {
+            return $this->redirectToRoute("home");
+        }
     }
 }
