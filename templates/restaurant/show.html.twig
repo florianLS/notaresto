@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Restaurant - {{theRestaurant.name}}{% endblock %}
+
+{% block body %}
+    <div class="container the-restaurant">
+            <div class="one-restaurant">
+                <h2>{{theRestaurant.name}}</h2>
+                <img id="poster" src="/uploads/posters/{{ theRestaurant.poster }}" alt="Poster du restaurant">
+                <p>{{theRestaurant.description}}</p>
+                <p>Ville: {{theRestaurant.city.name}}</p>
+            </div>
+            <hr>
+            <div class="reviews">
+                <h2>Tous les commentaires du restaurant</h2>
+                {% for review in theRestaurant.reviews %}
+                    <div class="review">
+                        <p>{{review.message}}</p>
+                        <p>Note: {{review.rating}}</p>
+                        <p>Écrit le: {{review.createdAt|date("m/d/Y") }} par <i>{{review.user.email}}</i></p>
+                    </div>
+                {% endfor %}
+            </div>
+    </div>
+
+{% endblock %}

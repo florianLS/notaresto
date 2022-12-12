@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Restaurant - Ajouter un nouveau restaurant{% endblock %}
+
+{% block body %}
+    <div class="container add-restaurant">
+            <div class="form-restaurant">
+                <h2>Ajouter un nouveau restaurant</h2>
+                {{form(form)}}
+                {% if notification is not null %}
+                <p class="success">{{notification}}</p>
+                {% endif %}
+            </div>
+    </div>
+
+{% endblock %}

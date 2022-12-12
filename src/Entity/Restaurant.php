@@ -28,6 +28,16 @@ class Restaurant
     #[ORM\OneToMany(mappedBy: 'restaurant', targetEntity: Review::class)]
     private Collection $reviews;
 
+    #[ORM\ManyToOne(inversedBy: 'restaurants', cascade: ['persist'])]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $user = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $poster = null;
+
+    #[ORM\ManyToOne(inversedBy: 'restaurants')]
+    private ?City $city = null;
+
     public function __construct()
     {
         $this->reviews = new ArrayCollection();
@@ -120,5 +130,41 @@ class Restaurant
         }
 
         return $averageRating;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    public function getPoster(): ?string
+    {
+        return $this->poster;
+    }
+
+    public function setPoster(?string $poster): self
+    {
+        $this->poster = $poster;
+
+        return $this;
+    }
+
+    public function getCity(): ?City
+    {
+        return $this->city;
+    }
+
+    public function setCity(?City $city): self
+    {
+        $this->city = $city;
+
+        return $this;
     }
 }
